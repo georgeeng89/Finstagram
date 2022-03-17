@@ -21,7 +21,7 @@ def validation_errors_to_error_messages(validation_errors):
 # @login_required
 def photos():
   photos = Photo.query.all()
-  return {'photos': [photo.to_dict() for photo in photos]}
+  return jsonify([photo.to_dict() for photo in photos])
 
 
 @photo_routes.route('/add', methods=['POST'])

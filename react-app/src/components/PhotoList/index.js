@@ -5,11 +5,13 @@ import './PhotoList.css'
 const PhotoList = () => {
 
   let photosState = Object.values(useSelector(state => state.photos))
-  let photosObj = useSelector(state => state.photos)
+  // let photosObj = useSelector(state => state.photos)
 
-  console.log('photosObj ====================> ', photosObj)
+  let state = useSelector(state => state)
 
-  console.log(photosState)
+  console.log('state ====================> ', state)
+
+  console.log('photosState ------------------->',photosState)
 
   return (
     <>
@@ -19,7 +21,7 @@ const PhotoList = () => {
         {photosState?.reverse().map(photo => (
           <div key={photo.id} className='photo-container-inner'>
             <div className='caption-username'>{photo.username}</div>
-            {/* {console.log('photo username ============>,', photo.username)} */}
+
             <img className='picture' src={photo.url} />
 
             <div className='caption-container'>
@@ -29,6 +31,7 @@ const PhotoList = () => {
 
           </div>
         ))}
+
       </div>
     </>
   );

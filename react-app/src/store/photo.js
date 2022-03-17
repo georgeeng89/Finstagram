@@ -64,19 +64,17 @@ export default function photoReducer(state = {}, action) {
   switch (action.type) {
 
     case GET_PHOTO:
-
       newState = {...state}
-      
-      action.payload.photos.forEach(photo => newState[photo.id] = photo)
-
-      console.log('newState ===========================> ', newState)
-
+      action.payload.forEach(photo => newState[photo.id] = photo)
+      console.log('GET_PHOTO, newState ===========================> ', newState)
       return newState;
 
     case ADD_PHOTO:
       newState = JSON.parse(JSON.stringify(state));
-      newState.photos[action.payload] = action.payload;
+      newState[action.payload] = action.payload;
       return newState;
+
+
 
     default:
       return state;
