@@ -1,0 +1,33 @@
+.picture {
+  width: 600px;
+  height: 100%;
+}
+
+.caption-container {
+  display: flex;
+}
+
+.caption-username {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.caption {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.photo-container-outer {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.photo-container-inner {
+  border: 1px solid rgb(192, 192, 192);
+  margin: 10px;
+}
