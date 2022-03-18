@@ -5,10 +5,11 @@ import EditDeleteModal from '../EditDeleteModal';
 
 const PhotoList = () => {
 
-  let photosState = Object.values(useSelector(state => state.photos))
+  const photosState = Object.values(useSelector(state => state.photos))
   // let photosObj = useSelector(state => state.photos)
 
-  let state = useSelector(state => state)
+  const state = useSelector(state => state)
+  const user = useSelector(state => state.session.user);
 
   console.log('state ====================> ', state)
 
@@ -31,7 +32,10 @@ const PhotoList = () => {
               {/* <div>
                 ...
               </div> */}
-              <EditDeleteModal />
+
+              {user.id === photo.user_id && <EditDeleteModal />}
+
+              {/* <EditDeleteModal /> */}
 
 
             </div>

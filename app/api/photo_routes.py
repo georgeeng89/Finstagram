@@ -2,6 +2,8 @@ from flask import Blueprint, jsonify, session, request
 from flask_login import login_required
 from app.models import db, Photo
 from app.forms import AddPhotoForm
+from flask_login import current_user, login_required
+
 
 photo_routes = Blueprint('photos', __name__)
 
@@ -45,3 +47,16 @@ def add_photo():
         return photo.to_dict()
 
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
+
+@photo_routes.route('/delete/<int:id>', methods=['DELETE'])
+# @login_required
+def remove_photo(id):
+    photo = Photo.query.get(id)
+
+    if(current_user.id == photo.user_id):
+        db.session.delete(photo)
+        db.session.commit()
+
+    return "Photo Deleted Successfully"
