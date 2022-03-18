@@ -54,3 +54,27 @@ export const Modal = props => {
     </div>
   );
 };
+
+
+
+export const Modal2 = props => {
+  if (!props.show) {
+    return null;
+  }
+
+  return (
+    <div className='modal' onClick={props.onClose}>
+      <div className='modal-content' onClick={e => e.stopPropagation()}>
+        <div className='modal-header'>
+          <div className='modal-body'>{props.title}</div>
+        </div>
+        <div className='modal-body'>{props.children}</div>
+        <div className='modal-footer'>
+          <button onClick={props.onClose} className='button'>
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};

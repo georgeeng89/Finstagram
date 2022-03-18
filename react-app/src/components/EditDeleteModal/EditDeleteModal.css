@@ -1,0 +1,23 @@
+.edit-photo {
+  background-color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.edit-photo:hover {
+  cursor: pointer;
+}
+
+
+.delete-photo {
+  background-color: white;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(236, 0, 0)
+}
+
+.delete-photo:hover {
+  cursor: pointer;
+}

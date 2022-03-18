@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './PhotoList.css'
+import EditDeleteModal from '../EditDeleteModal';
 
 const PhotoList = () => {
 
@@ -22,14 +23,16 @@ const PhotoList = () => {
           <div key={photo.id} className='photo-container-inner'>
 
             <div className='photo-container-header'>
-              
+
               <div className='caption-username'>
                 {photo.username}
               </div>
 
-              <div>
+              {/* <div>
                 ...
-              </div>
+              </div> */}
+              <EditDeleteModal />
+
 
             </div>
             <img className='picture' src={photo.url} />
