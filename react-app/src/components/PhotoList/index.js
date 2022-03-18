@@ -11,7 +11,7 @@ const PhotoList = () => {
 
   console.log('state ====================> ', state)
 
-  console.log('photosState ------------------->',photosState)
+  console.log('photosState ------------------->', photosState)
 
   return (
     <>
