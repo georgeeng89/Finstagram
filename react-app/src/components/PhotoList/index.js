@@ -20,8 +20,18 @@ const PhotoList = () => {
 
         {photosState?.reverse().map(photo => (
           <div key={photo.id} className='photo-container-inner'>
-            <div className='caption-username'>{photo.username}</div>
 
+            <div className='photo-container-header'>
+              
+              <div className='caption-username'>
+                {photo.username}
+              </div>
+
+              <div>
+                ...
+              </div>
+
+            </div>
             <img className='picture' src={photo.url} />
 
             <div className='caption-container'>

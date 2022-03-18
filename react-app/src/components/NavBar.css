@@ -33,3 +33,10 @@ li {
 .logout-button {
   margin-right: 30px;
 }
+
+
+.upload-photo:hover {
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
