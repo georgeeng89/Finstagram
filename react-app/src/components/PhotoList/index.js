@@ -33,7 +33,7 @@ const PhotoList = () => {
                 ...
               </div> */}
 
-              {user.id === photo.user_id && <EditDeleteModal />}
+              {user?.id === photo.user_id && <EditDeleteModal />}
 
               {/* <EditDeleteModal /> */}
 

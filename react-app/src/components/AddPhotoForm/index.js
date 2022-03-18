@@ -16,7 +16,7 @@ function AddPhotoForm() {
   const dispatch = useDispatch();
 
   console.log('USER ---------------> ', user)
-  const userId = user.id
+  const userId = user?.id
 
 
   const updateCaption = e => {
