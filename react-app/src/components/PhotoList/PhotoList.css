@@ -44,3 +44,42 @@
 .placeholder {
   width: 90%;
 }
+
+
+.commentCounter {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  width: 0px;
+  height: 0px;
+}
+
+
+
+.comment-container {
+  display: flex;
+}
+
+.comment-username {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.comment {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.timestamp {
+  color: grey;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+
+.view-all-comments {
+  color: grey;
+  margin-left: 10px;
+}

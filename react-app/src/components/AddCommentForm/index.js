@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { addPhoto } from '../../store/photo';
 import { Modal } from '../context/Modal';
+import { addComment } from '../../store/comment';
 
 import './AddCommentForm.css'
 
@@ -10,6 +11,8 @@ function AddCommentForm({ photoId, userId }) {
 
   const [content, setContent] = useState('');
   const [errors, setErrors] = useState([]);
+
+  const dispatch = useDispatch();
 
   const updateContent = e => {
     setContent(e.target.value)
@@ -28,10 +31,14 @@ function AddCommentForm({ photoId, userId }) {
     //   url
     // };
 
-    // data = await dispatch(addPhoto(userId, photoId, content));
+    data = await dispatch(addComment(userId, photoId, content));
 
     if (data) {
       setErrors(data);
+    }
+
+    if(data === null) {
+      setContent('');
     }
 
     // if (data === null) {

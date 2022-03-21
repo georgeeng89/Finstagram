@@ -50,35 +50,35 @@ export const getComments = () => async dispatch => {
 };
 
 
-// export const addComment = (userId, photoId, content) => async dispatch => {
-//   const response = await fetch('/api/photos/add', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
+export const addComment = (userId, photoId, content) => async dispatch => {
+  const response = await fetch('/api/comments/add', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
 
-//     body: JSON.stringify({
-//       user_id: userId,
-//       photo_id: photoId,
-//       content
-//     }),
-//   });
+    body: JSON.stringify({
+      user_id: userId,
+      photo_id: photoId,
+      content
+    }),
+  });
 
-//   if (response.ok) {
-//     const data = await response.json();
+  if (response.ok) {
+    const data = await response.json();
 
-//     dispatch(add(data));
+    dispatch(add(data));
 
-//     return null;
-//   } else if (response.status < 500) {
-//     const data = await response.json();
-//     if (data.errors) {
-//       return data.errors;
-//     }
-//   } else {
-//     return ['An error occurred. Please try again.'];
-//   }
-// };
+    return null;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.'];
+  }
+};
 
 
 

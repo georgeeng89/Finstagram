@@ -22,5 +22,6 @@ class Photo(db.Model):
             'user_id': self.user_id,
             'caption': self.caption,
             'url': self.url,
-            'username': self.user.username
+            'username': self.user.username,
+            'created_at': self.created_at
         }
