@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { addPhoto } from '../../store/photo';
 import { Modal } from '../context/Modal';
 import { addComment } from '../../store/comment';
+import { getComments } from '../../store/comment';
 
 import './AddCommentForm.css'
 
@@ -18,6 +19,11 @@ function AddCommentForm({ photoId, userId }) {
     setContent(e.target.value)
   }
 
+  useEffect(() => {
+
+    dispatch(getComments())
+
+  },[dispatch, addComment])
 
   const handleSubmit = async e => {
 
@@ -49,7 +55,10 @@ function AddCommentForm({ photoId, userId }) {
 
   return (
 
-    <form onSubmit={handleSubmit}>
+    <form className='comment-form' onSubmit={handleSubmit}>
+
+       <i class="far fa-smile"></i>
+
       <div className='photo-errors'>
         {errors?.map((error, ind) => (
           <div key={ind}>{error}</div>

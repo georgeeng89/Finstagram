@@ -183,8 +183,8 @@ export default function commentReducer(state = {}, action) {
       return { ...state };
 
     case ADD_COMMENT:
-      newState = JSON.parse(JSON.stringify(state));
-      newState[action.payload] = action.payload;
+      newState = { ...state };
+      newState[action.payload.id] = action.payload;
       return newState;
 
     //     case DELETE_PHOTO:
