@@ -1,5 +1,7 @@
 const GET_PHOTO = 'photo/GET_PHOTO';
 const ADD_PHOTO = 'photo/ADD_PHOTO'
+const DELETE_PHOTO = 'photo/REMOVE_PHOTO'
+const EDIT_PHOTO = 'photo/EDIT_PHOTO'
 
 const get = photo => ({
   type: GET_PHOTO,
@@ -10,6 +12,61 @@ const add = photo => ({
   type: ADD_PHOTO,
   payload: photo
 })
+
+const remove = photo => ({
+  type: DELETE_PHOTO,
+  payload: photo
+})
+
+const edit = photo => ({
+  type: EDIT_PHOTO,
+  payload: photo
+})
+
+
+export const editPhoto = photo => async dispatch => {
+
+  const response = await fetch(`/api/photos/edit/${photo.id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(photo),
+  });
+
+  if (response.ok) {
+    const updatedPhoto = await response.json();
+
+    dispatch(edit(updatedPhoto));
+
+    return null;
+  } else if (response.status < 500) {
+    const data = await response.json();
+
+    if (data.errors) {
+
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.'];
+  }
+};
+
+
+export const deletePhoto = id => async dispatch => {
+  const response = await fetch(`/api/photos/delete/${id}`, { method: 'DELETE' });
+
+  if (response.ok) {
+    dispatch(remove(id));
+
+    return null;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.'];
+  }
+};
 
 export const addPhoto = (userId, caption, url) => async dispatch => {
   const response = await fetch('/api/photos/add', {
@@ -64,7 +121,7 @@ export default function photoReducer(state = {}, action) {
   switch (action.type) {
 
     case GET_PHOTO:
-      newState = {...state}
+      newState = { ...state }
       action.payload.forEach(photo => newState[photo.id] = photo)
       console.log('GET_PHOTO, newState ===========================> ', newState)
       return newState;
@@ -74,7 +131,15 @@ export default function photoReducer(state = {}, action) {
       newState[action.payload] = action.payload;
       return newState;
 
+    case DELETE_PHOTO:
+      newState = JSON.parse(JSON.stringify(state));
+      delete newState[action.payload];
+      return newState;
 
+    case EDIT_PHOTO:
+      newState = JSON.parse(JSON.stringify(state));
+      newState[action.payload.id] = action.payload;
+      return newState;
 
     default:
       return state;

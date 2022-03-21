@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, session, request
 from flask_login import login_required
 from app.models import db, Photo
-from app.forms import AddPhotoForm
+from app.forms import AddPhotoForm, EditPhotoForm
 from flask_login import current_user, login_required
 
 
@@ -60,3 +60,31 @@ def remove_photo(id):
         db.session.commit()
 
     return "Photo Deleted Successfully"
+
+
+
+@photo_routes.route('/edit/<int:id>', methods=['PUT'])
+@login_required
+def update_photo(id):
+    photo = Photo.query.get(id)
+
+    form = EditPhotoForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+
+        photo.user_id = form.data['user_id']
+        photo.caption = form.data['caption']
+        photo.url = form.data['url']
+
+        try:
+            db.session.add(photo)
+            db.session.commit()
+
+            return photo.to_dict()
+
+        except:
+
+            return {'errors': ['Photos : Something went wrong. Please try again']}, 401
+
+    return {'errors': validation_errors_to_error_messages(form.errors)}, 401

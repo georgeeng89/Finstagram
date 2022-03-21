@@ -13,15 +13,17 @@ import PhotoList from './components/PhotoList';
 
 import { authenticate } from './store/session';
 import { getPhotos } from './store/photo';
+import { getComments } from './store/comment'
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       await dispatch(getPhotos());
+      await dispatch(getComments())
 
       setLoaded(true);
     })();
@@ -42,7 +44,7 @@ function App() {
           <SignUpForm />
         </Route>
         <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
+          <UsersList />
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />

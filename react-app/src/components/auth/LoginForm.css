@@ -1,0 +1,38 @@
+.login-form-outer {
+  border: 2px solid green;
+  margin-top: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+
+
+.login-form-inner {
+  border: 2px solid orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+
+.sign-up-form-outer {
+  border: 2px solid green;
+  margin-top: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+
+
+.sign-up-form-inner {
+  border: 2px solid orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}

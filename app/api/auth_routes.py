@@ -3,6 +3,8 @@ from app.models import User, db
 from app.forms import LoginForm
 from app.forms import SignUpForm
 from flask_login import current_user, login_user, logout_user, login_required
+from app.seeds.users import demo_user
+
 
 auth_routes = Blueprint('auth', __name__)
 
@@ -43,6 +45,21 @@ def login():
         login_user(user)
         return user.to_dict()
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+
+
+
+@auth_routes.route('/demo', methods=['POST'])
+def demo():
+    """
+    Logs in as demo user
+    """
+    # Add the user to the session, we are logged in!
+    user = User.query.filter(User.email == demo_user.email).first()
+    if user:
+        login_user(user)
+        return user.to_dict()
+    else:
+        return {'errors': 'Demo user not found.'}
 
 
 @auth_routes.route('/logout')

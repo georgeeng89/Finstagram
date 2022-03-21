@@ -26,6 +26,7 @@
   align-items: center;
   font-family: Helvetica, sans-serif;
   font-size: 15px;
+  margin-top: 90px;
 }
 
 .photo-container-inner {
@@ -33,9 +34,13 @@
   margin: 10px;
 }
 
-/* .photo-container-header {
-  border: 2px solid red;
+.photo-container-header {
+  /* border: 2px solid red; */
   display: flex;
-  justify-content:space-around;
+  justify-content:space-between;
   align-items: center;
-} */
+}
+
+.placeholder {
+  width: 90%;
+}
