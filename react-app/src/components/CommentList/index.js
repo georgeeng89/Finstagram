@@ -102,6 +102,12 @@ const CommentList = ({ photo, photoId, userId }) => {
         <div className='modal-comments'>
           <div className='photo-username'>{photo.username}</div>
 
+          <div className='comment-modal-inner-content'>
+            <div className='comment-username'>{photo.username}</div>
+            <div className='comment-content'>{photo.caption}</div>
+          </div>
+
+
           {filteredComments.map(comment => (
             <div className='comment-modal-inner-content'>
               <div className='comment-username'> {comment.username} </div>
@@ -120,60 +126,60 @@ const CommentList = ({ photo, photoId, userId }) => {
 
                 //   <button onClick={() => setShowModal1(true)}>Delete</button> */}
 
-                  // <Modal3
-                  //   title={<button id={comment.id} className='edit-photo' onClick={() => {
-                  //     setShowModal3(true)
-                  //     setShowModal1(false)
-                  //   }}>Edit</button>}
-                  //   onClose={() => setShowModal1(false)}
-                  //   show={showModal1}
-                  // >
+                // <Modal3
+                //   title={<button id={comment.id} className='edit-photo' onClick={() => {
+                //     setShowModal3(true)
+                //     setShowModal1(false)
+                //   }}>Edit</button>}
+                //   onClose={() => setShowModal1(false)}
+                //   show={showModal1}
+                // >
 
-                  //   <button className='delete-photo' id={photoId} onClick={handleClick}>Delete</button>
+                //   <button className='delete-photo' id={photoId} onClick={handleClick}>Delete</button>
 
-                  // </Modal3>
+                // </Modal3>
 
 
-                  // <Modal4
-                  //   title={'Edit Comment'}
-                  //   onClose={() => setShowModal3(false)}
-                  //   show={showModal3}
-                  // >
+                // <Modal4
+                //   title={'Edit Comment'}
+                //   onClose={() => setShowModal3(false)}
+                //   show={showModal3}
+                // >
 
-                  //   <form onSubmit={handleSubmit}>
-                  //     <div className='photo-errors'>
-                  //       {errors?.map((error, ind) => (
-                  //         <div key={ind}>{error}</div>
-                  //       ))}
-                  //     </div>
+                //   <form onSubmit={handleSubmit}>
+                //     <div className='photo-errors'>
+                //       {errors?.map((error, ind) => (
+                //         <div key={ind}>{error}</div>
+                //       ))}
+                //     </div>
 
-                  //     <div>
-                  //       <input type='hidden' id='userId' name='userId' value={userId} />
-                  //     </div>
+                //     <div>
+                //       <input type='hidden' id='userId' name='userId' value={userId} />
+                //     </div>
 
-                  //     {/* <div>
-                  //       <input type='hidden' id='userId' name='userId' value={commentId=comment.id} />
-                  //     </div> */}
+                //     {/* <div>
+                //       <input type='hidden' id='userId' name='userId' value={commentId=comment.id} />
+                //     </div> */}
 
-                  //     {/* {console.log('COMMENT ID ================>', comment.id)} */}
+                //     {/* {console.log('COMMENT ID ================>', comment.id)} */}
 
-                  //     <div>
-                  //       <label htmlFor='comment'>Comment </label>
-                  //       <input
-                  //         name='comment'
-                  //         type='text'
-                  //         placeholder='Comment'
-                  //         value={content}
-                  //         onChange={updateContent}
-                  //       />
-                  //     </div>
+                //     <div>
+                //       <label htmlFor='comment'>Comment </label>
+                //       <input
+                //         name='comment'
+                //         type='text'
+                //         placeholder='Comment'
+                //         value={content}
+                //         onChange={updateContent}
+                //       />
+                //     </div>
 
-                  //     <button className='submit-button' type='submit'>Submit Changes</button>
-                  //   </form>
+                //     <button className='submit-button' type='submit'>Submit Changes</button>
+                //   </form>
 
-                  //   {/* <EditComment comment={comment} /> */}
+                //   {/* <EditComment comment={comment} /> */}
 
-                  // </Modal4>
+                // </Modal4>
 
 
                 // </>

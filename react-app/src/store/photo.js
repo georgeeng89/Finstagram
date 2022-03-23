@@ -127,19 +127,19 @@ export default function photoReducer(state = {}, action) {
       return newState;
 
     case ADD_PHOTO:
-      newState = JSON.parse(JSON.stringify(state));
-      newState[action.payload] = action.payload;
-      return newState;
+      newState = { ...state };
+      newState[action.payload.id] = action.payload
+      return newState
 
     case DELETE_PHOTO:
-      newState = JSON.parse(JSON.stringify(state));
+      newState = { ...state };
       delete newState[action.payload];
       return newState;
 
     case EDIT_PHOTO:
-      newState = JSON.parse(JSON.stringify(state));
-      newState[action.payload.id] = action.payload;
-      return newState;
+      newState = { ...state };
+      newState[action.payload.id] = action.payload
+      return newState
 
     default:
       return state;

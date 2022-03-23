@@ -78,7 +78,6 @@ def update_photo(id):
         photo.url = form.data['url']
 
         try:
-            db.session.add(photo)
             db.session.commit()
 
             return photo.to_dict()

@@ -189,7 +189,7 @@ export default function commentReducer(state = {}, action) {
       return newState;
 
     case DELETE_COMMENT:
-      newState = JSON.parse(JSON.stringify(state));
+      newState = { ...state };
       delete newState[action.payload];
       return newState;
 

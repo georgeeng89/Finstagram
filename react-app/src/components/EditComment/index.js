@@ -43,6 +43,11 @@ function EditComment({ comment }) {
     if (data) {
       alert(data);
     }
+
+    if (data === null) {
+      setShowModal3(false)
+      setShowModal1(false);
+    }
   };
 
 
