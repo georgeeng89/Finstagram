@@ -36,6 +36,7 @@
 
 .photo-container-header {
   /* border: 2px solid red; */
+  border-bottom: 1px solid rgb(192, 192, 192);
   display: flex;
   justify-content:space-between;
   align-items: center;
@@ -59,6 +60,7 @@
 .comment-container {
   display: flex;
   width: 100%;
+  word-break: break-word;
 }
 
 .comment-username {
@@ -69,6 +71,8 @@
 .comment {
   margin-top: 10px;
   margin-bottom: 10px;
+  max-width: 500px;
+  word-break: break-word;
 }
 
 

@@ -50,7 +50,7 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
+          <PhotoList />
         </ProtectedRoute>
         <Route path='/home' exact={true}>
 

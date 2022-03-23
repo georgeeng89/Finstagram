@@ -109,7 +109,7 @@
 
 .modal-body {
   padding: 10px;
-  border-top: 1px solid #eee;
+  /* border-top: 1px solid #eee; */
   border-bottom: 1px solid #eee;
   display: flex;
   justify-content: center;
@@ -140,7 +140,6 @@
 
 
 
-
 .comments-list-modal {
   background-color: rgba(0,0,0,0.5);
   position: fixed;
@@ -158,7 +157,6 @@
   background-color: #FFF;
   color: black;
   border-radius: 3px;
-  border: 1px solid black;
 }
 
 .modal-content4 {
@@ -166,7 +164,7 @@
   background-color: #FFF;
   color: black;
   border-radius: 3px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   /* box-shadow:rgb(170, 170, 170);
   box-shadow: 0 0 10px 0.1em rgb(149, 225, 255); */
 }

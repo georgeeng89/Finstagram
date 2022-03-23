@@ -18,8 +18,8 @@ const NavBar = () => {
 
         <div>
 
-          <NavLink to='/home' exact={true} activeClassName='active'>
-            <a href='/home' className='logo'><img className='logo' src='/static/finstagram_logo.png' alt='Finstagram Logo'/></a>
+          <NavLink to='/' exact={true} activeClassName='active'>
+            <a href='/' className='logo'><img className='logo' src='/static/finstagram_logo.png' alt='Finstagram Logo'/></a>
           </NavLink>
 
         </div>
