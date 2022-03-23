@@ -66,6 +66,10 @@ const CommentList = ({ photo, photoId, userId }) => {
     // }
   };
 
+  const handleImage = (e) => {
+    e.target.src = '/static/aa_default_image.png'
+  }
+
 
   let commentCount = 0;
   // let numberOfComments = 0;
@@ -82,7 +86,7 @@ const CommentList = ({ photo, photoId, userId }) => {
 
 
       <CommentModal
-        title={<img className='modal-picture' src={photo.url}></img>}
+        title={<img className='modal-picture' src={photo.url} onError={handleImage}></img>}
         onClose={() => {
           setShowModal(false)
           setShowModal1(false)
@@ -103,12 +107,12 @@ const CommentList = ({ photo, photoId, userId }) => {
               <div className='comment-username'> {comment.username} </div>
               <div className='comment-content'> {comment.content} </div>
 
-              {comment.user_id === user.id && (
+              {comment.user_id === user?.id && (
 
 
                 // <button className='edit-photo' onClick={() => setShowModal1(true)}>...</button>
 
-                <EditComment comment={comment} commentId={comment.id}/>
+                <EditComment comment={comment} />
 
                 // <>
 
@@ -203,6 +207,7 @@ const CommentList = ({ photo, photoId, userId }) => {
               <div className='comment-container'>
                 <div className='comment-username'>{comment.username}</div>
                 <div className='comment'>{comment.content}</div>
+                {user?.id === comment.user_id && <EditComment comment={comment} />}
               </div>
 
               <div className='commentCounter'>

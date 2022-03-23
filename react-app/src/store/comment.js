@@ -21,10 +21,10 @@ const add = comment => ({
   payload: comment
 })
 
-// const remove = comment => ({
-//   type: DELETE_COMMENT,
-//   payload: comment
-// })
+const remove = id => ({
+  type: DELETE_COMMENT,
+  payload: id
+})
 
 const edit = comment => ({
   type: EDIT_COMMENT,
@@ -109,22 +109,22 @@ export const editComment = comment => async dispatch => {
 };
 
 
-// export const deletePhoto = id => async dispatch => {
-//   const response = await fetch(`/api/photos/delete/${id}`, { method: 'DELETE' });
+export const deleteComment = id => async dispatch => {
+  const response = await fetch(`/api/comments/delete/${id}`, { method: 'DELETE' });
 
-//   if (response.ok) {
-//     dispatch(remove(id));
+  if (response.ok) {
+    dispatch(remove(id));
 
-//     return null;
-//   } else if (response.status < 500) {
-//     const data = await response.json();
-//     if (data.errors) {
-//       return data.errors;
-//     }
-//   } else {
-//     return ['An error occurred. Please try again.'];
-//   }
-// };
+    return null;
+  } else if (response.status < 500) {
+    const data = await response.json();
+    if (data.errors) {
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.'];
+  }
+};
 
 // export const addPhoto = (userId, caption, url) => async dispatch => {
 //   const response = await fetch('/api/photos/add', {
@@ -179,8 +179,9 @@ export default function commentReducer(state = {}, action) {
   switch (action.type) {
 
     case GET_COMMENT:
-      state = action.payload;
-      return { ...state };
+      newState = { ...state }
+      action.payload.forEach(comment => newState[comment.id] = comment)
+      return newState;
 
     case ADD_COMMENT:
       newState = { ...state };
@@ -188,14 +189,14 @@ export default function commentReducer(state = {}, action) {
       return newState;
 
     case DELETE_COMMENT:
-      newState = { ...state };
-      delete newState[action.payload.id]
+      newState = JSON.parse(JSON.stringify(state));
+      delete newState[action.payload];
       return newState;
 
     case EDIT_COMMENT:
       newState = { ...state };
-      newState[action.payload.id] = action.payload;
-      return newState;
+      newState[action.payload.id] = action.payload
+      return newState
 
     default:
       return state;

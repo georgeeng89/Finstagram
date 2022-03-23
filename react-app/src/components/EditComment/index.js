@@ -7,19 +7,18 @@ import { getComments } from '../../store/comment';
 
 import { CommentModal, Modal3, Modal, Modal4 } from '../context/Modal';
 
-import { editComment } from '../../store/comment';
+import { editComment, deleteComment } from '../../store/comment';
 
 import './EditComment.css'
 
 
-function EditComment({ comment, commentId }) {
+function EditComment({ comment }) {
 
-  const [showModal, setShowModal] = useState(false);
   const [showModal1, setShowModal1] = useState(false);
   const [showModal3, setShowModal3] = useState(false);
 
 
-  const [content, setContent] = useState('')
+  const [content, setContent] = useState(comment.content)
   const [errors, setErrors] = useState([]);
 
   const photosState = Object.values(useSelector(state => state.photos))
@@ -32,9 +31,21 @@ function EditComment({ comment, commentId }) {
     setContent(e.target.value)
   }
 
-  const userId = user?.id
+  // const userId = user?.id
 
-  const handleClick = 1;
+  const handleClick = async e => {
+    e.preventDefault();
+
+    let id = e.target.id;
+
+    const data = await dispatch(deleteComment(id));
+
+    if (data) {
+      alert(data);
+    }
+  };
+
+
   const handleSubmit = async e => {
     e.preventDefault();
 
@@ -42,24 +53,23 @@ function EditComment({ comment, commentId }) {
     setErrors([]);
     let data = [];
 
-    // let comment = {
-    //   user_id: userId,
-    //   photo_id: photoId,
-    //   content,
-    //   id: commentId
-    // };
+    let updatedComment = {
+      user_id: user?.id,
+      photo_id: comment.photo_id,
+      content,
+      id: comment.id
+    };
 
-    // data = await dispatch(editComment(comment));
+    data = await dispatch(editComment(updatedComment));
 
-    // if (data) {
-    //   setErrors(data);
-    // }
+    if (data) {
+      setErrors(data);
+    }
 
-    // if (data === null) {
-    //   setShowModal3(false)
-    //   setShowModal1(false);
-    //   setShowModal(false);
-    // }
+    if (data === null) {
+      setShowModal3(false)
+      setShowModal1(false);
+    }
   };
 
 
@@ -67,7 +77,7 @@ function EditComment({ comment, commentId }) {
     <>
 
 
-      <button className='edit-photo' onClick={() => setShowModal1(true)}>...</button>
+      <button className='edit-photo' onClick={() => setShowModal1(true)}><i class="fas fa-ellipsis-h"></i></button>
 
 
       <Modal3
@@ -93,22 +103,17 @@ function EditComment({ comment, commentId }) {
             ))}
           </div>
 
-          <div>
-            <input type='hidden' id='userId' name='userId' value={userId} />
-          </div>
-
           {/* <div>
-                        <input type='hidden' id='userId' name='userId' value={commentId=comment.id} />
-                      </div> */}
+            <input type='hidden' id='userId' name='userId' value={userId} />
+          </div> */}
 
-          {/* {console.log('COMMENT ID ================>', comment.id)} */}
 
           <div>
             <label htmlFor='comment'>Comment </label>
             <input
               name='comment'
               type='text'
-              placeholder='Comment'
+              placeholder={'comment'}
               value={content}
               onChange={updateContent}
             />

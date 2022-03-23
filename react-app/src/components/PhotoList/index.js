@@ -4,6 +4,7 @@ import EditDeleteModal from '../EditDeleteModal';
 import AddCommentForm from '../AddCommentForm';
 import { useHistory } from 'react-router-dom';
 import CommentList from '../CommentList';
+import EditComment from '../EditComment';
 
 import './PhotoList.css'
 
@@ -39,15 +40,30 @@ const PhotoList = () => {
   const history = useHistory();
 
 
+  const handleImage = (e) => {
+    e.target.src = '/static/aa_default_image.png'
+  }
+
+
   let commentCount = 0;
   let numberOfComments = 0;
   let viewComments = false;
   let timestamp = false;
 
-  let date = new Date();
+  // let date = new Date();
 
-  // console.log('state ====================> ', state)
-  console.log('photosState ------------------->', photosState)
+  function calcTime(offset) {
+    var d = new Date();
+
+    var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+
+    var time = new Date(utc + (3600000*offset));
+
+    return time.toLocaleString('en-US', { hour12: false });
+}
+
+  let date = calcTime('-7')
+
 
   if (!user) {
     history.push('/login')
@@ -87,7 +103,7 @@ const PhotoList = () => {
               {/* <i class="fa-solid fa-heart"></i> */}
 
             </div>
-            <img className='picture' src={photo.url} />
+            <img className='picture' src={photo.url} onError={handleImage} />
 
             <div className='caption-container'>
               <div className='caption-username'>{photo.username}</div>
@@ -140,9 +156,9 @@ const PhotoList = () => {
             <div className='timestamp'>
 
               <div>created: {photo.created_at}</div>
-              <div>today:- {date.toGMTString()}</div>
+              <div>today:- {date}</div>
 
-              {(timestamp === false) && date.toGMTString().split(' ')[1] - photo.created_at.split(' ')[1] > 1 && (
+              {/* {(timestamp === false) && date.toGMTString().split(' ')[1] - photo.created_at.split(' ')[1] > 1 && (
                 <>
                   <div>
                     {date.toGMTString().split(' ')[1] - photo.created_at.split(' ')[1]} DAYS AGO
@@ -162,7 +178,7 @@ const PhotoList = () => {
                     {timestamp = true}
                   </div>
                 </>
-              )}
+              )} */}
 
               {/* <div>{date.toGMTString().split(' ')[4].split(':')[0]}</div> */}
 

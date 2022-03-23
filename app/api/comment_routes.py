@@ -77,13 +77,13 @@ def update_comment(id):
 
 
 
-# @photo_routes.route('/delete/<int:id>', methods=['DELETE'])
-# # @login_required
-# def remove_photo(id):
-#     photo = Photo.query.get(id)
+@comment_routes.route('/delete/<int:id>', methods=['DELETE'])
+# @login_required
+def remove_comment(id):
+    comment = Comment.query.get(id)
 
-#     if(current_user.id == photo.user_id):
-#         db.session.delete(photo)
-#         db.session.commit()
+    if(current_user.id == comment.user_id):
+        db.session.delete(comment)
+        db.session.commit()
 
-#     return "Photo Deleted Successfully"
+    return "Comment Deleted Successfully"

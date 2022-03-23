@@ -94,7 +94,7 @@ export const Modal3 = props => {
         <div className='modal-body'>{props.children}</div>
         <div className='modal-footer'>
           <button onClick={props.onClose} className='button'>
-            Close (modal3)
+            Close
           </button>
         </div>
       </div>
@@ -116,7 +116,7 @@ export const Modal4 = props => {
         <div className='modal-body'>{props.children}</div>
         <div className='modal-footer'>
           <button onClick={props.onClose} className='button'>
-            Close MODAL 4
+            Close
           </button>
         </div>
       </div>

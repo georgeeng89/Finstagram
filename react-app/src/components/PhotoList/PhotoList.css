@@ -58,6 +58,7 @@
 
 .comment-container {
   display: flex;
+  width: 100%;
 }
 
 .comment-username {
@@ -82,4 +83,11 @@
 .view-all-comments {
   color: grey;
   margin-left: 10px;
+}
+
+.edit-photo {
+  margin-left: 5px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 5px;
 }

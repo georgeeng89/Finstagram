@@ -20,7 +20,7 @@ function EditDeleteModal({ photoId, photoUrl, photoCaption }) {
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
-  console.log('USER ---------------> ', user)
+  // console.log('USER ---------------> ', user)
   const userId = user.id
 
 
@@ -67,12 +67,11 @@ function EditDeleteModal({ photoId, photoUrl, photoCaption }) {
       alert(data);
     }
 
-    // setInfo(true);
   };
 
   return (
     <>
-      <button className='edit-photo' onClick={() => setShowModal(true)}>...</button>
+      <button className='edit-photo' onClick={() => setShowModal(true)}><i class="fas fa-ellipsis-h"></i></button>
       <Modal2
         title={<button className='edit-photo' onClick={() => setShowModal1(true)}>Edit</button>}
         onClose={() => setShowModal(false)}
