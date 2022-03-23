@@ -6,8 +6,8 @@
 
 const GET_COMMENT = 'comment/GET_COMMENT'
 const ADD_COMMENT = 'comment/ADD_COMMENT'
-// const DELETE_COMMENT = 'comment/DELETE_COMMENT'
-// const EDIT_COMMENT = 'comment/EDIT_COMMENT'
+const DELETE_COMMENT = 'comment/DELETE_COMMENT'
+const EDIT_COMMENT = 'comment/EDIT_COMMENT'
 
 
 
@@ -26,10 +26,10 @@ const add = comment => ({
 //   payload: comment
 // })
 
-// const edit = comment => ({
-//   type: EDIT_COMMENT,
-//   payload: comment
-// })
+const edit = comment => ({
+  type: EDIT_COMMENT,
+  payload: comment
+})
 
 export const getComments = () => async dispatch => {
 
@@ -82,31 +82,31 @@ export const addComment = (userId, photoId, content) => async dispatch => {
 
 
 
-// export const editPhoto = photo => async dispatch => {
+export const editComment = comment => async dispatch => {
 
-//   const response = await fetch(`/api/photos/edit/${photo.id}`, {
-//     method: 'PUT',
-//     headers: { 'Content-Type': 'application/json' },
-//     body: JSON.stringify(photo),
-//   });
+  const response = await fetch(`/api/comments/edit/${comment.id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(comment),
+  });
 
-//   if (response.ok) {
-//     const updatedPhoto = await response.json();
+  if (response.ok) {
+    const updatedComment = await response.json();
 
-//     dispatch(edit(updatedPhoto));
+    dispatch(edit(updatedComment));
 
-//     return null;
-//   } else if (response.status < 500) {
-//     const data = await response.json();
+    return null;
+  } else if (response.status < 500) {
+    const data = await response.json();
 
-//     if (data.errors) {
+    if (data.errors) {
 
-//       return data.errors;
-//     }
-//   } else {
-//     return ['An error occurred. Please try again.'];
-//   }
-// };
+      return data.errors;
+    }
+  } else {
+    return ['An error occurred. Please try again.'];
+  }
+};
 
 
 // export const deletePhoto = id => async dispatch => {
@@ -187,15 +187,15 @@ export default function commentReducer(state = {}, action) {
       newState[action.payload.id] = action.payload;
       return newState;
 
-    //     case DELETE_PHOTO:
-    //       newState = JSON.parse(JSON.stringify(state));
-    //       delete newState[action.payload];
-    //       return newState;
+    case DELETE_COMMENT:
+      newState = { ...state };
+      delete newState[action.payload.id]
+      return newState;
 
-    //     case EDIT_PHOTO:
-    //       newState = JSON.parse(JSON.stringify(state));
-    //       newState[action.payload.id] = action.payload;
-    //       return newState;
+    case EDIT_COMMENT:
+      newState = { ...state };
+      newState[action.payload.id] = action.payload;
+      return newState;
 
     default:
       return state;

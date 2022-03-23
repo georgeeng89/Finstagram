@@ -34,7 +34,6 @@ const PhotoList = () => {
 
   // commentState.forEach(comment => console.log('MY COMMENT!!!', comment))
 
-  const state = useSelector(state => state)
   const user = useSelector(state => state.session.user);
 
   const history = useHistory();
@@ -140,8 +139,8 @@ const PhotoList = () => {
 
             <div className='timestamp'>
 
-              {/* <div>{photo.created_at}</div>
-              <div>{date.toGMTString()}</div> */}
+              <div>created: {photo.created_at}</div>
+              <div>today:- {date.toGMTString()}</div>
 
               {(timestamp === false) && date.toGMTString().split(' ')[1] - photo.created_at.split(' ')[1] > 1 && (
                 <>
@@ -165,9 +164,7 @@ const PhotoList = () => {
                 </>
               )}
 
-
               {/* <div>{date.toGMTString().split(' ')[4].split(':')[0]}</div> */}
-
 
             </div>
 

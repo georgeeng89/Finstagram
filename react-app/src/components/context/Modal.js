@@ -78,3 +78,78 @@ export const Modal2 = props => {
     </div>
   );
 };
+
+
+export const Modal3 = props => {
+  if (!props.show) {
+    return null;
+  }
+
+  return (
+    <div className='comments-list-modal' onClick={props.onClose}>
+      <div className='comments-list-modal-content' onClick={e => e.stopPropagation()}>
+        <div className='modal-header'>
+          <div className='modal-body'>{props.title}</div>
+        </div>
+        <div className='modal-body'>{props.children}</div>
+        <div className='modal-footer'>
+          <button onClick={props.onClose} className='button'>
+            Close (modal3)
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const Modal4 = props => {
+  if (!props.show) {
+    return null;
+  }
+
+  return (
+    <div className='comments-list-modal' onClick={props.onClose}>
+      <div className='modal-content4' onClick={e => e.stopPropagation()}>
+        <div className='modal-header'>
+          <h4 className='modal-title'>{props.title}</h4>
+        </div>
+        <div className='modal-body'>{props.children}</div>
+        <div className='modal-footer'>
+          <button onClick={props.onClose} className='button'>
+            Close MODAL 4
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+
+
+
+export const CommentModal = props => {
+  if (!props.show) {
+    return null;
+  }
+
+  return (
+    <div className='comment-modal' onClick={props.onClose}>
+      <div className='comment-modal-content' onClick={e => e.stopPropagation()}>
+        {/* <div className='comment-modal-header'> */}
+        <div className='comment-modal-left'>{props.title}</div>
+        {/* </div> */}
+
+
+        <div className='comment-modal-right'>
+          {props.children}
+          </div>
+        <div onClick={props.onClose} className='comment-button'>
+          <div className='comment-modal-footer'>
+            <i class="fas fa-times"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

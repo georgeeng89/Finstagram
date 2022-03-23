@@ -19,11 +19,11 @@ function AddCommentForm({ photoId, userId }) {
     setContent(e.target.value)
   }
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    dispatch(getComments())
+  //   dispatch(getComments())
 
-  },[dispatch, addComment])
+  // },[dispatch, addComment])
 
   const handleSubmit = async e => {
 

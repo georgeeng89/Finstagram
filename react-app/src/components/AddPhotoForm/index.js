@@ -45,6 +45,8 @@ function AddPhotoForm() {
     }
 
     if (data === null) {
+      setUrl('');
+      setCaption('');
       setShowModal(false);
     }
   };

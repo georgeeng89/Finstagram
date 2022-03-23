@@ -1,0 +1,138 @@
+.view-all-comments:hover {
+  cursor:pointer;
+}
+
+
+.modal-comments {
+  /* border: 2px solid red; */
+  border-left: 1px solid rgb(218, 218, 218, 0.5);
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  margin-right: 0px;
+
+  /* transform: rotate(-90deg); */
+}
+
+
+.comment-modal-right {
+  /* border: 2px solid blue; */
+  width: 500px;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-modal-left {
+  /* border: 2px solid green; */
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* .comment-modal-body {
+  padding: 10px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+
+.comment-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-modal-content {
+
+  height: 800px;
+  width: 700px;
+  background-color: #FFF;
+  color: black;
+  border-radius: 3px;
+  width: 1150px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-modal-header, .comment-modal-footer {
+  padding: 10px;
+}
+
+.comment-modal-title {
+  margin: 0;
+}
+
+
+.comment-modal-body div {
+  margin-bottom: 20px;
+}
+
+
+.comment-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 5px;
+  margin-right: 15px;
+  font-size: 50px;
+  font-weight: lighter;
+  color: white;
+  /* text-decoration: none;
+  color: white;
+  display: inline;
+  font-family: helvetica;
+  border: solid black 1px;
+  border-radius: 3px;
+  background-color: black; */
+}
+
+.comment-button:hover{
+  /* background-color: white;
+  color: black;
+  box-shadow: 1px 1px .2em rgb(170, 170, 170); */
+  cursor: pointer;
+}
+
+
+.modal-picture {
+  width: 100%;
+  height: fit-content;
+}
+
+
+.photo-username {
+  border-bottom: 1px solid rgb(218, 218, 218, 0.5);
+  padding: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.comment-modal-inner-content {
+  display: flex;
+}
+
+
+.comment-username {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.comment-content {
+  margin: 10px;
+}
