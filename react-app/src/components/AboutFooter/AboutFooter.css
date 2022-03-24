@@ -1,0 +1,39 @@
+
+
+
+.footer-bar {
+  background-color: white;
+  /* padding: 20px; */
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: Arial, Helvetica, sans-serif;
+  list-style: none;
+  border-radius: 1px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-top: 0px;
+  border-top: 1px solid rgb(141, 141, 141, 0.5);
+  /* background-color: rgba(207, 207, 207, 0.5); */
+  /* border: 2px solid red; */
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+.about-me-container {
+  /* border: 2px solid blue; */
+}
+
+.about-me-icons a {
+  font-size: 22px;
+  margin-left: 30px;
+  text-decoration: none;
+  color: rgb(32, 32, 32);
+}

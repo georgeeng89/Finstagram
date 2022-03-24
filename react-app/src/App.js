@@ -12,6 +12,7 @@ import User from './components/User';
 import PhotoList from './components/PhotoList';
 import ProfileDetails from './components/ProfileDetails';
 import PageNotFound from './components/PageNotFound';
+import AboutFooter from './components/AboutFooter';
 
 import { authenticate } from './store/session';
 import { getPhotos } from './store/photo';
@@ -38,6 +39,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
+      <AboutFooter />
       <Switch>
         <Route path='/login' exact={true}>
           <LoginForm />
