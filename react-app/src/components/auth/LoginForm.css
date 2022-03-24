@@ -1,4 +1,4 @@
-.login-form-outer {
+/* .login-form-outer {
   border: 2px solid green;
   margin-top: 300px;
   display: flex;
@@ -15,8 +15,9 @@
   justify-content: center;
   align-items: center;
   padding: 40px;
-}
+} */
 
+/*
 
 .sign-up-form-outer {
   border: 2px solid green;
@@ -27,12 +28,135 @@
   padding: 40px;
 }
 
-
-
 .sign-up-form-inner {
   border: 2px solid orange;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px;
+} */
+
+
+.login-page-container {
+  margin-top: -50px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  flex-grow: 1;
+}
+
+#login-form-img {
+  /* border: 2px solid red; */
+  margin-top: 50px;
+  height: 500px;
+  width: fit-content;
+  /* object-fit: cover; */
+  overflow: hidden;
+}
+
+.login-form-container {
+  /* padding: 30px; */
+  padding-top: 50px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.form-container {
+  margin-top: 50px;
+}
+
+.sub-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-form {
+  border: 1px solid rgb(172, 172, 172, 0.5);
+  padding: 20px;
+  border-radius: 1px;
+}
+
+.login-form input {
+  width: 220px;
+  height: 25px;
+  margin-top: 30px;
+}
+
+.login-form label {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+
+.login-form input:hover {
+  /* border: 2px solid green; */
+  border-radius: 2px;
+}
+
+
+
+.login-button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  text-decoration: none;
+  color: white;
+  display: inline;
+  font-family: helvetica;
+  padding: 4px 7px;
+  border: solid 1px rgb(61, 152, 255);
+  border-radius: 3px;
+  background-color: rgb(61, 152, 255);
+}
+
+.login-button:hover {
+  background-color: white;
+  color: rgb(61, 152, 255);
+  box-shadow: 1px 1px .2em rgb(170, 170, 170);
+  cursor: pointer;
+}
+
+
+.page-link {
+  /* font-weight: bold; */
+  text-decoration: none;
+  color: rgb(0, 119, 255);
+  margin-left: 5px;
+}
+
+.signup-container {
+  border: 1px solid rgb(172, 172, 172, 0.5);
+  border-radius: 1px;
+  margin-top: 10px;
+  padding: 19px;
+}
+
+
+.image-container {
+  margin-top: 50px;
+  height: 130vh;
+  width: 50%;
+  object-fit: cover;
+  overflow: hidden;
+  padding: 10px;
+  /* border: 2px solid green; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.logo.login-page {
+  margin-left: 35px;
 }

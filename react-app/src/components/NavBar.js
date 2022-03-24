@@ -32,14 +32,14 @@ const NavBar = () => {
             <>
 
               <div className='login-nav'>
-                <NavLink to='/login' exact={true} activeClassName='active'>
+                {/* <NavLink to='/login' exact={true} activeClassName='active'>
                   Login
-                </NavLink>
+                </NavLink> */}
               </div>
               <div className='logout-button'>
-                <NavLink to='/sign-up' exact={true} activeClassName='active'>
+                {/* <NavLink to='/sign-up' exact={true} activeClassName='active'>
                   Sign Up
-                </NavLink>
+                </NavLink> */}
               </div>
 
             </>
