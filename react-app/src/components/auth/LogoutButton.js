@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { logout } from '../../store/session';
 import { useHistory, useParams } from 'react-router-dom';
 
+import './LogoutButton.css'
+
 const LogoutButton = () => {
 
   const dispatch = useDispatch()
@@ -14,7 +16,7 @@ const LogoutButton = () => {
     history.push('/login')
   };
 
-  return <button onClick={onLogout}>Logout</button>;
+  return <div onClick={onLogout}><i class="fas fa-sign-out-alt logout-button"></i></div>;
 };
 
 export default LogoutButton;

@@ -56,7 +56,7 @@ def add_photo():
 
         elif validImage == None:
 
-            return {'errors': ['Image Url : Please enter a valid image URL.']}, 401
+            return {'errors': ['Image Url : Please enter a valid image Url. (Url must end with .jpg, .jpeg, .png, or .gif)']}, 401
 
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
@@ -112,6 +112,6 @@ def update_photo(id):
 
             print('INSIDE VALID IMAGE EQUALS NONE =================')
 
-            return {'errors': ['Image Url : Please enter a valid image URL.']}, 401
+            return {'errors': ['Image Url : Please enter a valid image Url. (Url must end with .jpg, .jpeg, .png, or .gif)']}, 401
 
     return {'errors': validation_errors_to_error_messages(form.errors)}, 401

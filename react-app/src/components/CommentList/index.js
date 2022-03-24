@@ -4,6 +4,7 @@ import EditDeleteModal from '../EditDeleteModal';
 import AddCommentForm from '../AddCommentForm';
 import { useHistory } from 'react-router-dom';
 import { getComments } from '../../store/comment';
+import AddCommentFormModal from '../AddCommentFormModal';
 
 import { CommentModal, Modal3, Modal, Modal4 } from '../context/Modal';
 
@@ -13,7 +14,7 @@ import EditComment from '../EditComment';
 
 import './CommentList.css'
 
-const CommentList = ({ photo, photoId, userId }) => {
+const CommentList = ({ profileDetails, photo, photoId, userId }) => {
 
 
   const [showModal, setShowModal] = useState(false);
@@ -80,7 +81,9 @@ const CommentList = ({ photo, photoId, userId }) => {
       {/* <h3>hello from commentlist</h3> */}
 
 
-      {filteredComments.length > 3 && (<div className='view-all-comments' onClick={() => setShowModal(true)}>View All {filteredComments.length} Comments</div>)}
+      {filteredComments.length > 3 && !profileDetails && (<div className='view-all-comments' onClick={() => setShowModal(true)}>View All {filteredComments.length} Comments</div>)}
+
+      {profileDetails && (<div className='view-all-comments' onClick={() => setShowModal(true)}>View Comments</div>)}
 
       {/* {<button onClick={() => setShowModal(true)} className='view-all-comments'>View All {filteredComments.length} Comments</button>} */}
 
@@ -93,6 +96,7 @@ const CommentList = ({ photo, photoId, userId }) => {
           setShowModal3(false)
         }}
         show={showModal}
+        form={<AddCommentFormModal photoId={photoId} userId={userId} />}
       >
 
         {/* <div className='modal-picture'> */}
@@ -192,13 +196,17 @@ const CommentList = ({ photo, photoId, userId }) => {
 
             </div>
           ))}
-        </div>
 
+          {/* <h1>PLACEHOLDER ADD COMMENT</h1> */}
+
+
+
+        </div>
         {/* <button className='delete-photo' id={photoId}>Delete</button> */}
       </CommentModal>
 
 
-      {commentState.reverse().map(comment => {
+      {!profileDetails && commentState.reverse().map(comment => {
 
         // if (numberOfComments > 3 && viewComments === true) {
         //   viewComments = false;

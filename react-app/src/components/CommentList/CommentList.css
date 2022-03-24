@@ -16,11 +16,11 @@
 
 
 .comment-modal-right {
-  /* border: 2px solid blue; */
   width: 500px;
   padding: 0px;
   margin: 0px;
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
 }
 

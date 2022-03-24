@@ -15,7 +15,7 @@
 .caption {
   margin-top: 10px;
   margin-bottom: 10px;
-
+  word-break: break-word;
 }
 
 .photo-container-outer {
@@ -32,6 +32,7 @@
 .photo-container-inner {
   border: 1px solid rgb(192, 192, 192);
   margin: 10px;
+  width: 600px;
 }
 
 .photo-container-header {
@@ -55,7 +56,42 @@
   height: 0px;
 }
 
+.comment-form {
+  width: 100%;
+  /* border: 2px solid blue; */
+  border-top: 1px solid rgba(138, 138, 138, 0.5);
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2px;
+}
+/*
+.commment-form-container {
+  width: 100%;
+  border: 2px solid blue;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2px;
+} */
 
+.smile-icon {
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-top: 12px;
+}
+
+.comment-form input {
+  margin-top: 10px;
+  height: 25px;
+  width: 500px;
+  border: none;
+}
+
+.comment-form input:focus{
+  outline: none;
+}
 
 .comment-container {
   display: flex;

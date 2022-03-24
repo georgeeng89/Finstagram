@@ -21,7 +21,7 @@ function EditDeleteModal({ photoId, photoUrl, photoCaption }) {
   const dispatch = useDispatch();
 
   // console.log('USER ---------------> ', user)
-  const userId = user.id
+  const userId = user?.id
 
 
   const updateCaption = e => {
@@ -84,14 +84,20 @@ function EditDeleteModal({ photoId, photoUrl, photoCaption }) {
 
       <Modal
         title={'Edit Photo'}
-        onClose={() => setShowModal1(false)}
+        onClose={() => {
+          setErrors([])
+          setShowModal1(false)
+          setShowModal(false)
+          setUrl(photoUrl)
+          setCaption(photoCaption)
+        }}
         show={showModal1}
       >
 
         <form onSubmit={handleSubmit}>
-          <div className='photo-errors'>
+        <div className='comment-errors'>
             {errors?.map((error, ind) => (
-              <div key={ind}>{error}</div>
+              <div key={ind}>{error.split(':')[1]}</div>
             ))}
           </div>
 

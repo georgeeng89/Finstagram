@@ -143,7 +143,10 @@ export const CommentModal = props => {
 
         <div className='comment-modal-right'>
           {props.children}
+          <div>
+            {props.form}
           </div>
+        </div>
         <div onClick={props.onClose} className='comment-button'>
           <div className='comment-modal-footer'>
             <i class="fas fa-times"></i>

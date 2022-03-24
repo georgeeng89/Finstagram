@@ -9,11 +9,11 @@ class Photo(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     caption = db.Column(db.String(3000), nullable=False)
     url = db.Column(db.String(5000), nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow()+timedelta(hours=-7), nullable=False)
-    updated_at = db.Column(db.DateTime, default=datetime.utcnow()+timedelta(hours=-7), onupdate=datetime.now(), nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.now(), nullable=False)
+    updated_at = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now(), nullable=False)
 
-    # created_at = db.Column(db.DateTime, default=datetime.utcnow()+timedelta(hours=3), nullable=False)
-    # updated_at = db.Column(db.DateTime, default=datetime.utcnow()+timedelta(hours=3), onupdate=datetime.now(), nullable=False)
+    # created_at = db.Column(db.DateTime, default=datetime.utcnow()+timedelta(hours=-7), nullable=False)
+    # updated_at = db.Column(db.DateTime, default=datetime.utcnow()+timedelta(hours=-7), onupdate=datetime.now(), nullable=False)
 
     user = db.relationship("User", back_populates="photos")
     comments = db.relationship("Comment", back_populates="photos", cascade='all, delete')

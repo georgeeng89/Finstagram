@@ -15,5 +15,3 @@ class EditPhotoForm(FlaskForm):
     user_id = StringField('user_id', validators=[DataRequired()])
     caption = StringField('caption', validators=[DataRequired(message='Please enter a caption')])
     url = StringField('url', validators=[DataRequired(message='Please enter a URL')])
-
-

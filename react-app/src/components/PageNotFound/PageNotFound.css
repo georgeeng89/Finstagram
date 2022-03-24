@@ -1,0 +1,11 @@
+.page-not-found-container {
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.page-not-found-image {
+  height: 500px;
+  width: fit-content;
+}

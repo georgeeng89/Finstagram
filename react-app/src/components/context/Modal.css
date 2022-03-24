@@ -90,6 +90,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
 .modal-content {
@@ -97,6 +98,7 @@
   background-color: #FFF;
   color: black;
   border-radius: 3px;
+  z-index: 10;
 }
 
 .modal-header, .modal-footer {

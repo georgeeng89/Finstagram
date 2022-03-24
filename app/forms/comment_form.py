@@ -16,5 +16,3 @@ class EditCommentForm(FlaskForm):
     user_id = StringField('user_id', validators=[DataRequired()])
     photo_id = StringField('photo_id', validators=[DataRequired()])
     content = StringField('content', validators=[DataRequired(message='Please enter a comment')])
-
-

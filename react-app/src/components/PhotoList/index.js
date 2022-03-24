@@ -30,7 +30,7 @@ const PhotoList = () => {
 
   // console.log(commentLength)
 
-  console.log('COMMENTS ========> ', commentState)
+  // console.log('COMMENTS ========> ', commentState)
   // let photosObj = useSelector(state => state.photos)
 
   // commentState.forEach(comment => console.log('MY COMMENT!!!', comment))
@@ -121,7 +121,7 @@ const PhotoList = () => {
               </div> */}
 
 
-            <CommentList photo={photo} photoId={photo?.id} userId={user?.id} />
+            <CommentList profileDetails={false} photo={photo} photoId={photo?.id} userId={user?.id} />
 
             {/* {commentState.reverse().map(comment => {
 
@@ -155,8 +155,8 @@ const PhotoList = () => {
 
             <div className='timestamp'>
 
-              <div>created: {photo.created_at}</div>
-              <div>today:- {date}</div>
+              <div>Posted on {photo.created_at.split('GMT')}</div>
+              {/* <div>today:- {date}</div> */}
 
               {/* {(timestamp === false) && date.toGMTString().split(' ')[1] - photo.created_at.split(' ')[1] > 1 && (
                 <>
@@ -184,7 +184,7 @@ const PhotoList = () => {
 
             </div>
 
-            <div className='comment-container'>
+            <div className='comment-form-container'>
 
               {/* <i class="far fa-smile"></i> */}
 

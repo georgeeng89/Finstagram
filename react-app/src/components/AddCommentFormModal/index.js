@@ -6,9 +6,9 @@ import { Modal } from '../context/Modal';
 import { addComment } from '../../store/comment';
 import { getComments } from '../../store/comment';
 
-import './AddCommentForm.css'
+import './AddCommentFormModal.css'
 
-function AddCommentForm({ photoId, userId }) {
+function AddCommentFormModal({ photoId, userId }) {
 
   const [content, setContent] = useState('');
   const [errors, setErrors] = useState([]);
@@ -55,16 +55,17 @@ function AddCommentForm({ photoId, userId }) {
 
   return (
 
-    <div>
+    <div className='comment-form-modal-container'>
 
       <div className='comment-errors'>
         {errors?.map((error, ind) => (
           <div key={ind}>{error.split(':')[1]}</div>
         ))}
       </div>
-      <form className='comment-form' onSubmit={handleSubmit}>
 
-        <i class="far fa-smile smile-icon"></i>
+      <form className='comment-form-modal' onSubmit={handleSubmit}>
+
+        <i class="far fa-smile smile-icon-modal"></i>
 
 
         <div>
@@ -78,7 +79,7 @@ function AddCommentForm({ photoId, userId }) {
           />
         </div>
 
-        <button className='submit-button' type='submit'>Post</button>
+        <button className='submit-button-modal' type='submit'>Post</button>
 
       </form>
     </div>
@@ -90,4 +91,4 @@ function AddCommentForm({ photoId, userId }) {
 }
 
 
-export default AddCommentForm
+export default AddCommentFormModal

@@ -10,6 +10,8 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import PhotoList from './components/PhotoList';
+import ProfileDetails from './components/ProfileDetails';
+import PageNotFound from './components/PageNotFound';
 
 import { authenticate } from './store/session';
 import { getPhotos } from './store/photo';
@@ -46,16 +48,23 @@ function App() {
         <ProtectedRoute path='/users' exact={true} >
           <UsersList />
         </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
+        {/* <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
-        </ProtectedRoute>
+        </ProtectedRoute> */}
         <ProtectedRoute path='/' exact={true} >
           <PhotoList />
         </ProtectedRoute>
         <Route path='/home' exact={true}>
-
           <PhotoList />
-
+        </Route>
+        <Route path='/profile/:userId' exact={true}>
+          <ProfileDetails />
+        </Route>
+        <Route path='/404' exact={true}>
+          <PageNotFound />
+        </Route>
+        <Route path="*">
+          <PageNotFound />
         </Route>
 
       </Switch>

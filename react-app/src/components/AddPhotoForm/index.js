@@ -59,14 +59,19 @@ function AddPhotoForm() {
 
       <Modal
         title={`Upload Image`}
-        onClose={() => setShowModal(false)}
+        onClose={() => {
+          setErrors([])
+          setUrl('');
+          setCaption('');
+          setShowModal(false)
+        }}
         show={showModal}
       >
 
         <form onSubmit={handleSubmit}>
-          <div className='photo-errors'>
+          <div className='comment-errors'>
             {errors?.map((error, ind) => (
-              <div key={ind}>{error}</div>
+              <div key={ind}>{error.split(':')[1]}</div>
             ))}
           </div>
 

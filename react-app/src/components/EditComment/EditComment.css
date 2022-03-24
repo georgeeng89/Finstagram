@@ -1,3 +1,7 @@
 .comment-content {
   word-break: break-word;
 }
+
+.caption {
+  word-break: break-word;
+}

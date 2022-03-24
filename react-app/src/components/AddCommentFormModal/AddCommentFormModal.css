@@ -1,0 +1,51 @@
+.comment-form-modal-container {
+  /* border: 2px solid red; */
+}
+
+.comment-form-modal {
+  /* border: 2px solid green; */
+  border-top: 1px solid rgb(218, 218, 218, 0.5);
+  border-left: 1px solid rgb(218, 218, 218, 0.5);
+  display: flex;
+  width: 100%;
+  bottom: 0;
+  }
+
+.comment-form-modal input{
+    height: 30px;
+    width: 250px;
+    border: none;
+}
+
+.comment-form-modal input:focus{
+    outline: none;
+}
+
+
+.submit-button-modal {
+
+  color: rgb(59, 151, 255);
+  background-color: white;
+  border: none;
+  margin-right: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.comment-form-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.comment-errors {
+    color: rgb(139, 0, 0);
+}
+
+.smile-icon-modal {
+  font-size: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
