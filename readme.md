@@ -67,3 +67,11 @@ Finstagram is built using React for the frontend, and Flask for the backend usin
    npm start
    ```
 
+## All Posts
+   - Users can view all posts upon logging into Finstagram.
+![Tables](https://i.ibb.co/zhPXMwX/home-page-rm.png)
+
+## Users Detail Page
+   - Users can view each others details page, where all the posts from the specific user will be there.
+![Tables](https://i.ibb.co/P5Mh6gH/details-page-rm.png)
+
