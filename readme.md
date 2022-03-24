@@ -1,11 +1,11 @@
 # Welcome to Finstagram
 
-Finstagram is an Instagram Clone where users can upload image, create captions, and comment on each other's posts.
+[Finstagram](https://the-finstagram.herokuapp.com/) is an Instagram Clone where users can upload image, create captions, and comment on each other's posts.
 
 ![Tables](https://i.ibb.co/x7yKBwV/login-page-rm.png)
 
 ## Architecture
-Finstagram is built using React for the frontend, and Flask for the backend using PostgresSQL.
+[Finstagram](https://the-finstagram.herokuapp.com/) is built using React for the frontend, and Flask for the backend using PostgresSQL.
 
 ## Technologies Used
 - Frontend
@@ -61,7 +61,7 @@ Finstagram is built using React for the frontend, and Flask for the backend usin
  ```bash
    npm install
    ```
-   
+
 7. Start the frontend:
  ```bash
    npm start
@@ -75,4 +75,3 @@ Finstagram is built using React for the frontend, and Flask for the backend usin
 ## Users Detail Page
    - Users can view each others details page, where all the posts from the specific user will be there.
 ![Tables](https://i.ibb.co/P5Mh6gH/details-page-rm.png)
-
