@@ -8,14 +8,14 @@ Finstagram is an Instagram Clone where users can upload image, create captions, 
 Finstagram is built using React for the frontend, and Flask for the backend using PostgresSQL.
 
 ## Technologies Used
--Frontend
+- Frontend
    -  React
    -  Redux
    -  Javascript
    -  HTML
    -  CSS
 
--Backend
+- Backend
    - Flask
    - Python
    - PostgresSQL
