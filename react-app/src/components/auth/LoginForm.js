@@ -32,6 +32,8 @@ const LoginForm = () => {
     return <Redirect to='/' />;
   }
 
+  console.log('testing')
+
   return (
     <div className='login-page-container'>
       <div className='image-container'>
