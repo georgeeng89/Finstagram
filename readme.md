@@ -69,6 +69,7 @@ Finstagram is built using React for the frontend, and Flask for the backend usin
 
 ## All Posts
    - Users can view all posts upon logging into Finstagram.
+   - Users can comment on posts upon logging into Finstagram.
 ![Tables](https://i.ibb.co/zhPXMwX/home-page-rm.png)
 
 ## Users Detail Page
