@@ -12,6 +12,11 @@
   font-weight: bold;
 }
 
+.caption-username a {
+  text-decoration: none;
+  color: black;
+}
+
 .caption {
   margin-top: 10px;
   margin-bottom: 10px;

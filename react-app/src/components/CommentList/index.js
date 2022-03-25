@@ -104,17 +104,30 @@ const CommentList = ({ profileDetails, photo, photoId, userId }) => {
         {/* </div> */}
 
         <div className='modal-comments'>
-          <div className='photo-username'>{photo.username}</div>
+          <div className='photo-username'>
+            <a href={`/profile/${photo.user_id}`}>
+              {photo.username}
+            </a>
+          </div>
 
           <div className='comment-modal-inner-content'>
-            <div className='comment-username'>{photo.username}</div>
+            <div className='comment-username'>
+              <a href={`/profile/${photo.user_id}`}>
+                {photo.username}
+              </a>
+            </div>
             <div className='comment-content'>{photo.caption}</div>
           </div>
 
 
           {filteredComments.map(comment => (
             <div className='comment-modal-inner-content'>
-              <div className='comment-username'> {comment.username} </div>
+              <div className='comment-username'>
+                <a href={`/profile/${comment.user_id}`}>
+                  {comment.username}
+                </a>
+
+              </div>
               <div className='comment-content'> {comment.content} </div>
 
               {comment.user_id === user?.id && (
@@ -156,7 +169,11 @@ const CommentList = ({ profileDetails, photo, photoId, userId }) => {
           return (
             <div>
               <div className='comment-container'>
-                <div className='comment-username'>{comment.username}</div>
+                <div className='comment-username'>
+                  <a href={`/profile/${comment.user_id}`}>
+                    {comment.username}
+                  </a>
+                </div>
                 <div className='comment'>{comment.content}</div>
                 {user?.id === comment.user_id && <EditComment comment={comment} />}
               </div>

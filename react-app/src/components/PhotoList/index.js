@@ -38,10 +38,10 @@ const PhotoList = () => {
 
     var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
 
-    var time = new Date(utc + (3600000*offset));
+    var time = new Date(utc + (3600000 * offset));
 
     return time.toLocaleString('en-US', { hour12: false });
-}
+  }
 
   let date = calcTime('-7')
 
@@ -70,12 +70,11 @@ const PhotoList = () => {
             <div className='photo-container-header'>
 
               <div className='caption-username'>
-                {photo.username}
+                <a href={`/profile/${photo.user_id}`}>
+                  {photo.username}
+                </a>
               </div>
 
-              {/* <div>
-                ...
-              </div> */}
 
               {user?.id === photo.user_id && <EditDeleteModal photoId={photo?.id} photoUrl={photo?.url} photoCaption={photo.caption} />}
 
@@ -87,7 +86,11 @@ const PhotoList = () => {
             <img className='picture' src={photo.url} onError={handleImage} />
 
             <div className='caption-container'>
-              <div className='caption-username'>{photo.username}</div>
+              <div className='caption-username'>
+                <a href={`/profile/${photo.user_id}`}>
+                  {photo.username}
+                </a>
+              </div>
               <div className='caption'>{photo.caption}</div>
             </div>
 
@@ -97,7 +100,7 @@ const PhotoList = () => {
               }
             })}
 
-              {/* <div className='view-all-comments'>
+            {/* <div className='view-all-comments'>
                 View All {commentState.filter(comment => comment.photo_id === photo.id).length} Comments
               </div> */}
 
