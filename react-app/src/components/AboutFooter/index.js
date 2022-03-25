@@ -20,12 +20,18 @@ const AboutFooter = () => {
           Developed By: George Eng
         </div>
         <div className='about-me-icons'>
-          <a href="https://www.linkedin.com/in/george-eng-4b07631a5/">
+          <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/george-eng-4b07631a5/">
             <i class="fab fa-linkedin"></i>
           </a>
         </div>
         <div className='about-me-icons'>
-          <a href="https://github.com/georgeeng89">
+          <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/georgeeng89">
             <i class="fab fa-github-square"></i>
           </a>
         </div>
