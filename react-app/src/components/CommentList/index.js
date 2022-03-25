@@ -115,8 +115,8 @@ const CommentList = ({ profileDetails, photo, photoId, userId }) => {
               <a href={`/profile/${photo.user_id}`}>
                 {photo.username}
               </a>
+              <span className='comment-text'>{photo.caption}</span>
             </div>
-            <div className='comment-content'>{photo.caption}</div>
           </div>
 
 
@@ -127,8 +127,8 @@ const CommentList = ({ profileDetails, photo, photoId, userId }) => {
                   {comment.username}
                 </a>
 
+                <span className='comment-text'> {comment.content} </span>
               </div>
-              <div className='comment-content'> {comment.content} </div>
 
               {comment.user_id === user?.id && (
 
@@ -173,8 +173,8 @@ const CommentList = ({ profileDetails, photo, photoId, userId }) => {
                   <a href={`/profile/${comment.user_id}`}>
                     {comment.username}
                   </a>
+                  <span className='comment-text'>{comment.content}</span>
                 </div>
-                <div className='comment'>{comment.content}</div>
                 {user?.id === comment.user_id && <EditComment comment={comment} />}
               </div>
 

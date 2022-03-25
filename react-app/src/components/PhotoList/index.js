@@ -90,8 +90,11 @@ const PhotoList = () => {
                 <a href={`/profile/${photo.user_id}`}>
                   {photo.username}
                 </a>
+                <span className='photo-caption-text'>
+                  {photo.caption}
+                </span>
+                {/* <div className='caption'>{photo.caption}</div> */}
               </div>
-              <div className='caption'>{photo.caption}</div>
             </div>
 
             {commentState.forEach(comment => {

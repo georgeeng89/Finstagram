@@ -136,14 +136,21 @@
 .comment-username {
   margin: 10px;
   font-weight: bold;
+  word-break: break-all;
+  /* background-color: black; */
 }
 
 .comment-username a {
   text-decoration: none;
   color: black;
+  margin-right: 5px;
 }
 
 .comment-content {
   margin: 10px;
   /* word-break: break-all; */
+}
+
+.comment-text {
+  font-weight: lighter;
 }

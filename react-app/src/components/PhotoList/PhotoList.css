@@ -10,11 +10,17 @@
 .caption-username {
   margin: 10px;
   font-weight: bold;
+  word-break: break-word;
+}
+
+.photo-caption-text {
+  font-weight: lighter;
 }
 
 .caption-username a {
   text-decoration: none;
   color: black;
+  margin-right: 5px;
 }
 
 .caption {
@@ -102,7 +108,7 @@
 .comment-container {
   display: flex;
   width: 100%;
-  word-break: break-word;
+  /* word-break: break-word; */
 }
 
 .comment-username {
