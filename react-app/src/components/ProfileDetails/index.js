@@ -87,6 +87,13 @@ function ProfileDetails() {
 
         <div className='profile-details-user'> {user?.username}</div>
 
+        {filteredPhotos.length === 0 && (
+          <div className='profile-details-posts'>
+            <div className='profile-details-photos'>{filteredPhotos.length}</div>
+            <div className='profile-details-text'>posts</div>
+          </div>
+        )}
+
         {filteredPhotos.length === 1 && (
           <div className='profile-details-posts'>
             <div className='profile-details-photos'>{filteredPhotos.length}</div>
