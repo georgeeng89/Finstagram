@@ -97,14 +97,17 @@ function EditComment({ comment }) {
 
       <Modal4
         title={'Edit Comment'}
-        onClose={() => setShowModal3(false)}
+        onClose={() => {
+          setShowModal3(false)
+          setErrors([])
+        }}
         show={showModal3}
       >
 
         <form onSubmit={handleSubmit}>
-          <div className='photo-errors'>
+          <div className='comment-errors'>
             {errors?.map((error, ind) => (
-              <div key={ind}>{error}</div>
+              <div key={ind}>{error.split(':')[1]}</div>
             ))}
           </div>
 
@@ -131,31 +134,6 @@ function EditComment({ comment }) {
 
       </Modal4>
 
-
-      {/* <form onSubmit={handleSubmit}>
-        <div className='photo-errors'>
-          {errors?.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
-        </div>
-
-        <div>
-          <input type='hidden' id='userId' name='userId' value={userId} />
-        </div>
-
-        <div>
-          <label htmlFor='comment'>Comment </label>
-          <input
-            name='comment'
-            type='text'
-            placeholder='Comment'
-            value={content}
-            onChange={updateContent}
-          />
-        </div>
-
-        <button className='submit-button' type='submit'>Submit Changes</button>
-      </form> */}
     </>
   )
 }
