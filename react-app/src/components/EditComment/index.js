@@ -100,6 +100,7 @@ function EditComment({ comment }) {
         onClose={() => {
           setShowModal3(false)
           setErrors([])
+          setContent(comment.content)
         }}
         show={showModal3}
       >
