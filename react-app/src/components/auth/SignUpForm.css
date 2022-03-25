@@ -57,16 +57,26 @@
 }
 
 .sign-up-form {
-  border: 1px solid grey;
+  border: 1px solid rgb(172, 172, 172, 0.5);
   padding: 20px;
+  border-radius: 1px;
+  word-break: break-word;
+  width: 220px;
 }
+
 
 .sign-up-form input {
+  margin-top: 3px;
   width: 220px;
   height: 25px;
+  outline: none;
+  border: 1px solid rgba(116, 116, 116, 0.5);
+  border-radius: 2px;
 }
 
+
 .sign-up-form label {
+  margin-top: 3px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -74,11 +84,6 @@
   font-size: 16px;
 }
 
-/*
-
-.sign-up-form:hover {
-  box-shadow: 0 0 10px 0.1em rgb(149, 225, 255);
-} */
 
 .sign-up-button {
   margin-top: 10px;
@@ -95,11 +100,12 @@
 .sign-up-button:hover {
   cursor: pointer;
 }
-
+/*
 .sign-up-form input:hover {
-  /* border: 2px solid green; */
-  border-radius: 2px;
-}
+  outline: none;
+} */
+
+
 
 .sign-up-button {
   margin-top: 20px;

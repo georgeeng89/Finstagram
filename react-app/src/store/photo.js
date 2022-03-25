@@ -123,7 +123,6 @@ export default function photoReducer(state = {}, action) {
     case GET_PHOTO:
       newState = { ...state }
       action.payload.forEach(photo => newState[photo.id] = photo)
-      console.log('GET_PHOTO, newState ===========================> ', newState)
       return newState;
 
     case ADD_PHOTO:

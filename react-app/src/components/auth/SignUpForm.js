@@ -52,7 +52,7 @@ const SignUpForm = () => {
           <img className='logo' src='/static/finstagram_logo.png' />
           <div className='comment-errors'>
             {errors.map((error, ind) => (
-              <div key={ind}>{error}</div>
+              <div key={ind}>{error.split(':')[1]}</div>
             ))}
           </div>
           <div>

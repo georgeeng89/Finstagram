@@ -23,5 +23,6 @@ width: 100%;
 }
 
 .comment-errors {
-  color: rgb(139, 0, 0);
+  color: rgb(204, 0, 0);
+  word-break: break-word;
 }
