@@ -132,18 +132,9 @@ const CommentList = ({ profileDetails, photo, photoId, userId }) => {
 
               {comment.user_id === user?.id && (
 
-
-
-
                 <EditComment comment={comment} />
 
-
               )}
-
-
-
-
-
             </div>
           ))}
 

@@ -22,3 +22,36 @@
 .delete-photo:hover {
   cursor: pointer;
 }
+
+
+
+.caption-text {
+  /* border: 2px solid red; */
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.caption-text textarea {
+  height: 100px;
+  resize: none;
+}
+
+.caption-text label {
+  margin-bottom: 5px;
+}
+
+.image-url {
+  /* border: 2px solid green; */
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-url label {
+  margin-bottom: 5px;
+}
+
+.comment-errors.add-photo {
+  width: 300px;
+}

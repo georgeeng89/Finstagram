@@ -94,7 +94,7 @@ function EditDeleteModal({ photoId, photoUrl, photoCaption }) {
       >
 
         <form onSubmit={handleSubmit}>
-        <div className='comment-errors'>
+        <div className='comment-errors add-photo'>
             {errors?.map((error, ind) => (
               <div key={ind}>{error.split(':')[1]}</div>
             ))}
@@ -104,7 +104,7 @@ function EditDeleteModal({ photoId, photoUrl, photoCaption }) {
             <input type='hidden' id='userId' name='userId' value={userId} />
           </div>
 
-          <div>
+          <div className='image-url'>
             <label htmlFor='url'>Image URL</label>
             <input
               name='url'
@@ -116,9 +116,9 @@ function EditDeleteModal({ photoId, photoUrl, photoCaption }) {
             />
           </div>
 
-          <div>
+          <div className='caption-text'>
             <label htmlFor='caption'>Caption </label>
-            <input
+            <textarea
               name='caption'
               type='text'
               placeholder='Caption'

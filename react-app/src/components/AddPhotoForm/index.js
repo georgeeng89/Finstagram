@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { addPhoto } from '../../store/photo';
-import { Modal } from '../context/Modal';
+import { AddPhotoModal } from '../context/Modal';
 import './AddPhotoForm.css'
 
 function AddPhotoForm() {
@@ -56,7 +56,7 @@ function AddPhotoForm() {
 
       <i class="far fa-plus-square upload-photo" onClick={() => setShowModal(true)}></i>
 
-      <Modal
+      <AddPhotoModal
         title={`Upload Image`}
         onClose={() => {
           setErrors([])
@@ -68,7 +68,7 @@ function AddPhotoForm() {
       >
 
         <form onSubmit={handleSubmit}>
-          <div className='comment-errors'>
+          <div className='comment-errors add-photo'>
             {errors?.map((error, ind) => (
               <div key={ind}>{error.split(':')[1]}</div>
             ))}
@@ -78,7 +78,7 @@ function AddPhotoForm() {
             <input type='hidden' id='userId' name='userId' value={userId} />
           </div>
 
-          <div>
+          <div className='image-url'>
             <label htmlFor='url'>Image URL</label>
             <input
               name='url'
@@ -90,9 +90,9 @@ function AddPhotoForm() {
             />
           </div>
 
-          <div>
+          <div className='caption-text'>
             <label htmlFor='caption'>Caption </label>
-            <input
+            <textarea
               name='caption'
               type='text'
               placeholder='Caption'
@@ -105,7 +105,7 @@ function AddPhotoForm() {
         </form>
 
 
-      </Modal>
+      </AddPhotoModal>
     </>
   )
 }
